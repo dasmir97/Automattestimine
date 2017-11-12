@@ -10,9 +10,9 @@ import java.util.Map;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
-class ForecastRepository {
+public class ForecastRepository {
 
-    ForecastReport getForecast(WeatherRequest request) {
+    public ForecastReport getForecast(WeatherRequest request) {
         Map<String, String> result = parseForecastRequest(request.getForecastRequest());
 
         return new ForecastReport(
@@ -29,7 +29,7 @@ class ForecastRepository {
                 Double.parseDouble(result.get("day3Max")));
     }
 
-    Map<String, String> parseForecastRequest(String json) {
+    public Map<String, String> parseForecastRequest(String json) {
         Map<String, String> result = new HashMap<>();
 
         try {

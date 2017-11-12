@@ -6,9 +6,9 @@ import org.json.simple.parser.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
-class CurrentWeatherRepository {
+public class CurrentWeatherRepository {
 
-    CurrentWeatherReport getCurrentWeather(WeatherRequest request) {
+    public CurrentWeatherReport getCurrentWeather(WeatherRequest request) {
         Map<String, String> result = parseCurrentWeatherRequest(request.getCurrentWeatherRequest());
 
         return new CurrentWeatherReport(
@@ -20,7 +20,7 @@ class CurrentWeatherRepository {
                 Double.parseDouble(result.get("currentTemp")));
     }
 
-    Map<String, String> parseCurrentWeatherRequest(String json) {
+    public Map<String, String> parseCurrentWeatherRequest(String json) {
         Map<String, String> result = new HashMap<>();
 
         try {

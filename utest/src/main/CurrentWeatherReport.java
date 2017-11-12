@@ -8,12 +8,12 @@ public class CurrentWeatherReport {
     private double latitude;
     private double currentTemp;
 
-    CurrentWeatherReport(String city,
-                         String country,
-                         String units,
-                         double longitude,
-                         double latitude,
-                         double currentTemp) {
+    public CurrentWeatherReport(String city,
+                                String country,
+                                String units,
+                                double longitude,
+                                double latitude,
+                                double currentTemp) {
         this.city = city;
         this.country = country;
         this.units = units;
@@ -22,23 +22,23 @@ public class CurrentWeatherReport {
         this.currentTemp = currentTemp;
     }
 
-    String getCity() {
+    public String getCity() {
         return city;
     }
 
-    String getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    String getUnits() {
+    public String getUnits() {
         return units;
     }
 
-    double getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    double getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
@@ -48,9 +48,12 @@ public class CurrentWeatherReport {
 
     @Override
     public String toString() {
-        return "Weather report:\n" +
-                "City: " + city + "\n" +
-                "Country: " + country + "\n" +
+        String result = "Current weather report.\n" +
+                "City: " + city + "\n";
+        if (country != null) {
+            result += "Country: " + country + "\n";
+        }
+        return result +
                 "Units: " + units + "\n" +
                 "Coordinates: " + longitude + ", " + latitude + "\n" +
                 "Current temperature: " + currentTemp;

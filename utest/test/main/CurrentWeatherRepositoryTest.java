@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class CurrentWeatherRepositoryTest {
 
     private final String Tallinn = "Tallinn";
-    private final String EE = "ee";
+    private final String EE = "EE";
     private final String metric = "metric";
 
     @Test
@@ -21,6 +21,20 @@ public class CurrentWeatherRepositoryTest {
             CurrentWeatherRepository repository = new CurrentWeatherRepository();
 
             CurrentWeatherReport report = repository.getCurrentWeather(request);
+
+            assertEquals(report.getCity(), request.getCity());
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
+    public void testIfForecastRepositoryRespCityEqualsReqCity() {
+        try {
+            WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
+            ForecastRepository repository = new ForecastRepository();
+
+            ForecastReport report = repository.getForecast(request);
 
             assertEquals(report.getCity(), request.getCity());
         } catch (Exception e) {
@@ -43,6 +57,20 @@ public class CurrentWeatherRepositoryTest {
     }
 
     @Test
+    public void testIfForecastRepositoryRespCountryEqualsReqCountry() {
+        try {
+            WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
+            ForecastRepository repository = new ForecastRepository();
+
+            ForecastReport report = repository.getForecast(request);
+
+            assertEquals(report.getCountry(), request.getCountry());
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
     public void testIfWeatherRepositoryRespUnitsEqualsReqUnits() {
         try {
             WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
@@ -57,38 +85,38 @@ public class CurrentWeatherRepositoryTest {
     }
 
     @Test
+    public void testIfForecastRepositoryRespUnitsEqualsReqUnits() {
+        try {
+            WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
+            ForecastRepository repository = new ForecastRepository();
+
+            ForecastReport report = repository.getForecast(request);
+
+            assertEquals(report.getUnits(), request.getUnits());
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
     public void testCurrentWeatherURLBuild() {
-        String rightURL = "http://api.openweathermap.org/data/2.5/weather?q=Tallinn,ee&units=metric&appid=48fef17a00a3a871675bcde9bca4b3d5";
+        String rightURL = "http://api.openweathermap.org/data/2.5/weather?q=Tallinn,EE&units=metric&appid=48fef17a00a3a871675bcde9bca4b3d5";
         WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
         assertEquals(rightURL, request.buildURL(true));
     }
 
     @Test
     public void testForecastURLBuild() {
-        String rightURL = "http://api.openweathermap.org/data/2.5/forecast?q=Tallinn,ee&units=metric&appid=48fef17a00a3a871675bcde9bca4b3d5";
+        String rightURL = "http://api.openweathermap.org/data/2.5/forecast?q=Tallinn,EE&units=metric&appid=48fef17a00a3a871675bcde9bca4b3d5";
         WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
         assertEquals(rightURL, request.buildURL(false));
     }
 
     @Test
     public void testURLBuildImperialUnits() {
-        String rightURL = "http://api.openweathermap.org/data/2.5/weather?q=Tallinn,ee&units=imperial&appid=48fef17a00a3a871675bcde9bca4b3d5";
+        String rightURL = "http://api.openweathermap.org/data/2.5/weather?q=Tallinn,EE&units=imperial&appid=48fef17a00a3a871675bcde9bca4b3d5";
         WeatherRequest request = new WeatherRequest(Tallinn, EE, "imperial");
         assertEquals(rightURL, request.buildURL(true));
-    }
-
-    @Test
-    public void testCurrentWeatherResponseHasTemperature() {
-        try {
-            WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
-            CurrentWeatherRepository repository = new CurrentWeatherRepository();
-
-            Map<String, String> report = repository.parseCurrentWeatherRequest(request.getCurrentWeatherRequest());
-
-            assertTrue(report.containsKey("currentTemp"));
-        } catch (Exception e) {
-            fail("Failure cause: " + e.getMessage());
-        }
     }
 
     @Test
@@ -107,10 +135,39 @@ public class CurrentWeatherRepositoryTest {
     }
 
     @Test
-    public void testForecastResponseHasAllDays() {
+    public void testIfForecastResponseHasCoordinates() {
+        try {
+            WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
+            ForecastRepository repository = new ForecastRepository();
+
+            Map<String, String> report = repository.parseForecastRequest(request.getForecastRequest());
+
+            assertTrue(report.containsKey("longitude"));
+            assertTrue(report.containsKey("latitude"));
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
+    public void testCurrentWeatherResponseHasTemperature() {
         try {
             WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
             CurrentWeatherRepository repository = new CurrentWeatherRepository();
+
+            Map<String, String> report = repository.parseCurrentWeatherRequest(request.getCurrentWeatherRequest());
+
+            assertTrue(report.containsKey("currentTemp"));
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
+    public void testForecastResponseHasAllDays() {
+        try {
+            WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
+            ForecastRepository repository = new ForecastRepository();
 
             Map<String, String> report = repository.parseForecastRequest(request.getForecastRequest());
 

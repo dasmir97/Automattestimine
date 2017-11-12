@@ -13,17 +13,17 @@ public class ForecastReport {
     private double day3Min;
     private double day3Max;
 
-    ForecastReport(String city,
-                   String country,
-                   String units,
-                   double longitude,
-                   double latitude,
-                   double day1Min,
-                   double day1Max,
-                   double day2Min,
-                   double day2Max,
-                   double day3Min,
-                   double day3Max) {
+    public ForecastReport(String city,
+                          String country,
+                          String units,
+                          double longitude,
+                          double latitude,
+                          double day1Min,
+                          double day1Max,
+                          double day2Min,
+                          double day2Max,
+                          double day3Min,
+                          double day3Max) {
         this.city = city;
         this.country = country;
         this.units = units;
@@ -37,15 +37,15 @@ public class ForecastReport {
         this.day3Max = day3Max;
     }
 
-    String getCity() {
+    public String getCity() {
         return city;
     }
 
-    String getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    String getUnits() {
+    public String getUnits() {
         return units;
     }
 
@@ -83,9 +83,12 @@ public class ForecastReport {
 
     @Override
     public String toString() {
-        return "Weather report:\n" +
-                "City: " + city + "\n" +
-                "Country: " + country + "\n" +
+        String result = "Forecast report.\n" +
+                "City: " + city + "\n";
+        if (country != null) {
+            result += "Country: " + country + "\n";
+        }
+        return result +
                 "Units: " + units + "\n" +
                 "Coordinates: " + longitude + ", " + latitude + "\n" +
                 "Forecast (min; max):\n" +

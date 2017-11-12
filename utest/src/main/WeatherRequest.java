@@ -5,42 +5,42 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-class WeatherRequest {
+public class WeatherRequest {
 
     private final String APIkey = "48fef17a00a3a871675bcde9bca4b3d5";
     private String city;
     private String country;
     private String units;
 
-    WeatherRequest(String city, String country, String units) {
+    public WeatherRequest(String city, String country, String units) {
         this.city = city;
         this.country = country;
         this.units = units;
     }
 
-    String getCity() {
+    public String getCity() {
         return city;
     }
 
-    String getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    String getUnits() {
+    public String getUnits() {
         return units;
     }
 
-    String getCurrentWeatherRequest() {
+    public String getCurrentWeatherRequest() {
         String url = buildURL(true);
         return getRequestResponse(url);
     }
 
-    String getForecastRequest() {
+    public String getForecastRequest() {
         String url = buildURL(false);
         return getRequestResponse(url);
     }
 
-    String buildURL(boolean requestCurrentWeather) {
+    public String buildURL(boolean requestCurrentWeather) {
         String url = "http://api.openweathermap.org/data/2.5/";
         if (requestCurrentWeather) {
             url += "weather?q=" + city;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Automattestimine.iml" filepath="$PROJECT_DIR$/Automattestimine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utest/utest.iml" filepath="$PROJECT_DIR$/utest/utest.iml" />
+    </modules>
+  </component>
+</project>
