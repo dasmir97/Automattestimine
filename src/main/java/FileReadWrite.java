@@ -25,7 +25,7 @@ public class FileReadWrite {
 		}
 	}
 	
-	private void writeToFile() throws IOException {
+	public void writeToFile() throws IOException {
 		try (BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(currentWeatherReport.getCity() + ".txt"), "UTF-8"))) {
 			out.write("Place: " + currentWeatherReport.getCity());
 			if (currentWeatherReport.getCountry() != null) {
@@ -44,7 +44,7 @@ public class FileReadWrite {
 		}
 	}
 	
-	private void getWeatherAndForecast(String city, String country) {
+	public void getWeatherAndForecast(String city, String country) {
 		WeatherRequest request = new WeatherRequest(city, country, "metric");
 		
 		CurrentWeatherRepository currentWeatherRepository = new CurrentWeatherRepository();
