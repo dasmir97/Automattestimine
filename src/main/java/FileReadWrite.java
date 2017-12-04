@@ -1,5 +1,3 @@
-import org.json.simple.parser.ParseException;
-
 import java.io.*;
 
 public class FileReadWrite {
