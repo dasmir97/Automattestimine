@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5169d93-f8b4-457d-9e85-af3a1dbfa216" name="Default" comment="proov">
+    <list default="true" id="f5169d93-f8b4-457d-9e85-af3a1dbfa216" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1156,7 +1156,7 @@
       <updated>1506782029321</updated>
       <workItem from="1506782032827" duration="1244000" />
       <workItem from="1512349162639" duration="2645000" />
-      <workItem from="1512389293618" duration="11922000" />
+      <workItem from="1512389293618" duration="11948000" />
     </task>
     <task id="LOCAL-00001" summary="Junit init">
       <created>1506782258063</created>
@@ -1200,7 +1200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512403535052</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="prooc 3">
+      <created>1512404028445</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1512404028445</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1236,7 +1243,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28548000" />
+    <option name="totallyTimeSpent" value="28574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
@@ -1286,7 +1293,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="OK" />
     <MESSAGE value="proov" />
-    <option name="LAST_COMMIT_MESSAGE" value="proov" />
+    <MESSAGE value="prooc 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="prooc 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
