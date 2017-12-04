@@ -11,7 +11,7 @@ public class WeatherRequest {
 	private String country;
 	private String units;
 	
-	public WeatherRequest(String city, String country, String units) {
+	WeatherRequest(String city, String country, String units) {
 		this.city = city;
 		this.country = country;
 		this.units = units;

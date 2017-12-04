@@ -15,7 +15,7 @@ public class ForecastRepository {
 		return getForecast(request.getForecastRequest());
 	}
 	
-	public ForecastReport getForecast(String json) {
+	private ForecastReport getForecast(String json) {
 		Map<String, String> result = parseForecastRequest(json);
 		
 		return new ForecastReport(

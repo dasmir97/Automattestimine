@@ -1,31 +1,33 @@
+import org.json.simple.parser.ParseException;
+
 import java.io.*;
 
 public class FileReadWrite {
-	
+
 	private CurrentWeatherReport currentWeatherReport;
 	private ForecastReport forecastReport;
-	
+
 	public void readFromFile() throws IOException {
 		try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("input.txt"), "UTF-8"))) {
 			String line;
 			String city;
 			String country = null;
-			
+
 			while ((line = in.readLine()) != null) {
 				String[] request = line.trim().split(",");
 				city = request[0];
-				
+
 				if (request.length > 1) {
 					country = request[1];
 				}
-				
+
 				getWeatherAndForecast(city, country);
-				writeToFile();
+				writeToFile(currentWeatherReport, forecastReport);
 			}
 		}
 	}
-	
-	public void writeToFile() throws IOException {
+
+	public void writeToFile(CurrentWeatherReport currentWeatherReport, ForecastReport forecastReport) throws IOException {
 		try (BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(currentWeatherReport.getCity() + ".txt"), "UTF-8"))) {
 			out.write("Place: " + currentWeatherReport.getCity());
 			if (currentWeatherReport.getCountry() != null) {
@@ -43,13 +45,13 @@ public class FileReadWrite {
 			out.write("Current temperature: " + currentWeatherReport.getCurrentTemp());
 		}
 	}
-	
-	public void getWeatherAndForecast(String city, String country) {
+
+	private void getWeatherAndForecast(String city, String country) {
 		WeatherRequest request = new WeatherRequest(city, country, "metric");
-		
+
 		CurrentWeatherRepository currentWeatherRepository = new CurrentWeatherRepository();
 		ForecastRepository forecastRepository = new ForecastRepository();
-		
+
 		currentWeatherReport = currentWeatherRepository.getCurrentWeather(request);
 		forecastReport = forecastRepository.getForecast(request);
 	}

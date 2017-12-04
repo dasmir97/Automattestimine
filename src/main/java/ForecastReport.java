@@ -11,16 +11,16 @@ public class ForecastReport {
 	private double day3Min;
 	private double day3Max;
 	
-	public ForecastReport(String city,
-						  String country,
-						  double longitude,
-						  double latitude,
-						  double day1Min,
-						  double day1Max,
-						  double day2Min,
-						  double day2Max,
-						  double day3Min,
-						  double day3Max) {
+	ForecastReport(String city,
+				   String country,
+				   double longitude,
+				   double latitude,
+				   double day1Min,
+				   double day1Max,
+				   double day2Min,
+				   double day2Max,
+				   double day3Min,
+				   double day3Max) {
 		this.city = city;
 		this.country = country;
 		this.longitude = longitude;

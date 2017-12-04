@@ -6,11 +6,11 @@ public class CurrentWeatherReport {
 	private double latitude;
 	private double currentTemp;
 	
-	public CurrentWeatherReport(String city,
-								String country,
-								double longitude,
-								double latitude,
-								double currentTemp) {
+	CurrentWeatherReport(String city,
+						 String country,
+						 double longitude,
+						 double latitude,
+						 double currentTemp) {
 		this.city = city;
 		this.country = country;
 		this.longitude = longitude;

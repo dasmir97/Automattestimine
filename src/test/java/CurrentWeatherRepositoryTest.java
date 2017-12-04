@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class CurrentWeatherRepositoryTest {
+class CurrentWeatherRepositoryTest {
 	
 	private final String Tallinn = "Tallinn";
 	private final String EE = "EE";
 	private final String metric = "metric";
 	
 	@Test
-	public void testIfWeatherRepositoryRespCityEqualsReqCity() {
+	void testIfWeatherRepositoryRespCityEqualsReqCity() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			CurrentWeatherRepository repository = new CurrentWeatherRepository();
@@ -27,7 +27,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testIfForecastRepositoryRespCityEqualsReqCity() {
+	void testIfForecastRepositoryRespCityEqualsReqCity() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			ForecastRepository repository = new ForecastRepository();
@@ -41,7 +41,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testIfWeatherRepositoryRespCountryEqualsReqCountry() {
+	void testIfWeatherRepositoryRespCountryEqualsReqCountry() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			CurrentWeatherRepository repository = new CurrentWeatherRepository();
@@ -55,7 +55,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testIfForecastRepositoryRespCountryEqualsReqCountry() {
+	void testIfForecastRepositoryRespCountryEqualsReqCountry() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			ForecastRepository repository = new ForecastRepository();
@@ -69,28 +69,28 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testCurrentWeatherURLBuild() {
+	void testCurrentWeatherURLBuild() {
 		String rightURL = "http://api.openweathermap.org/data/2.5/weather?q=Tallinn,EE&units=metric&appid=48fef17a00a3a871675bcde9bca4b3d5";
 		WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 		assertEquals(rightURL, request.buildURL(true));
 	}
 	
 	@Test
-	public void testForecastURLBuild() {
+	void testForecastURLBuild() {
 		String rightURL = "http://api.openweathermap.org/data/2.5/forecast?q=Tallinn,EE&units=metric&appid=48fef17a00a3a871675bcde9bca4b3d5";
 		WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 		assertEquals(rightURL, request.buildURL(false));
 	}
 	
 	@Test
-	public void testURLBuildImperialUnits() {
+	void testURLBuildImperialUnits() {
 		String rightURL = "http://api.openweathermap.org/data/2.5/weather?q=Tallinn,EE&units=imperial&appid=48fef17a00a3a871675bcde9bca4b3d5";
 		WeatherRequest request = new WeatherRequest(Tallinn, EE, "imperial");
 		assertEquals(rightURL, request.buildURL(true));
 	}
 	
 	@Test
-	public void testCurrentWeatherResponseHasCoordinates() {
+	void testCurrentWeatherResponseHasCoordinates() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			CurrentWeatherRepository repository = new CurrentWeatherRepository();
@@ -105,7 +105,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testIfForecastResponseHasCoordinates() {
+	void testIfForecastResponseHasCoordinates() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			ForecastRepository repository = new ForecastRepository();
@@ -120,7 +120,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testCurrentWeatherResponseHasTemperature() {
+	void testCurrentWeatherResponseHasTemperature() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			CurrentWeatherRepository repository = new CurrentWeatherRepository();
@@ -134,7 +134,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testForecastResponseHasAllDays() {
+	void testForecastResponseHasAllDays() {
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
 			ForecastRepository repository = new ForecastRepository();
@@ -153,7 +153,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testTallinnLongitude() {
+	void testTallinnLongitude() {
 		double rightLongitude = 24.75;
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
@@ -168,7 +168,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testTallinnLatitude() {
+	void testTallinnLatitude() {
 		double rightLatitude = 59.44;
 		try {
 			WeatherRequest request = new WeatherRequest(Tallinn, EE, metric);
@@ -183,7 +183,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testLondonLongitude() {
+	void testLondonLongitude() {
 		double rightLongitude = -0.13;
 		try {
 			WeatherRequest request = new WeatherRequest("London", "GB", metric);
@@ -198,7 +198,7 @@ public class CurrentWeatherRepositoryTest {
 	}
 	
 	@Test
-	public void testLondonLatitude() {
+	void testLondonLatitude() {
 		double rightLatitude = 51.51;
 		try {
 			WeatherRequest request = new WeatherRequest("London", "GB", metric);
