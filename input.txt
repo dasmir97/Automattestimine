@@ -1,3 +1,4 @@
 Tartu,EE
 Tapa,EE
-London, GB
+London,GB
+Paris,FR

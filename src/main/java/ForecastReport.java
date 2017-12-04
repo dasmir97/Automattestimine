@@ -11,7 +11,7 @@ public class ForecastReport {
 	private double day3Min;
 	private double day3Max;
 	
-	ForecastReport(String city,
+		ForecastReport(String city,
 				   String country,
 				   double longitude,
 				   double latitude,
