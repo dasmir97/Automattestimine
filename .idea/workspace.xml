@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5169d93-f8b4-457d-9e85-af3a1dbfa216" name="Default" comment="">
+    <list default="true" id="f5169d93-f8b4-457d-9e85-af3a1dbfa216" name="Default" comment="proov">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/input.txt" afterPath="$PROJECT_DIR$/input.txt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ForecastReport.java" afterPath="$PROJECT_DIR$/src/main/java/ForecastReport.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -128,8 +126,8 @@
       <file leaf-file-name="CurrentWeatherRepositoryTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/CurrentWeatherRepositoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1428">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="84">
+              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1158,7 +1156,7 @@
       <updated>1506782029321</updated>
       <workItem from="1506782032827" duration="1244000" />
       <workItem from="1512349162639" duration="2645000" />
-      <workItem from="1512389293618" duration="11466000" />
+      <workItem from="1512389293618" duration="11922000" />
     </task>
     <task id="LOCAL-00001" summary="Junit init">
       <created>1506782258063</created>
@@ -1195,7 +1193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512397006095</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="proov">
+      <created>1512403535052</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1512403535052</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1231,7 +1236,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28092000" />
+    <option name="totallyTimeSpent" value="28548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
@@ -1280,7 +1285,8 @@
     <MESSAGE value="Junit init" />
     <MESSAGE value="update" />
     <MESSAGE value="OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="OK" />
+    <MESSAGE value="proov" />
+    <option name="LAST_COMMIT_MESSAGE" value="proov" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1616,8 +1622,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CurrentWeatherRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1428">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="84">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
