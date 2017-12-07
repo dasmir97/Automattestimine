@@ -1,6 +1,0 @@
-Place: Tartu, EE
-Coordinates: 26.73, 58.38
-Day 1 forecast: 1.04; -3.76
-Day 2 forecast: 1.58; -5.03
-Day 3 forecast: 4.34; -1.4
-Current temperature: -0.05

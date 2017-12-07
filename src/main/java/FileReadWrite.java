@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class FileReadWrite {
+public class 	FileReadWrite {
 
 	private CurrentWeatherReport currentWeatherReport;
 	private ForecastReport forecastReport;
